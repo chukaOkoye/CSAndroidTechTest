@@ -1,6 +1,7 @@
 package com.example.csandroidtechtest.view
 
 import androidx.compose.foundation.border
+import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxWidth
@@ -28,16 +29,19 @@ class ScoreUI {
             creditReport.getScore()
         }
 
-        Column {
+        Column (
+            horizontalAlignment = Alignment.CenterHorizontally,
+            verticalArrangement = Arrangement.Center,
+            modifier = Modifier.padding(bottom = 300.dp)){
             Box(
                 modifier = Modifier
-                    .size(200.dp)  // Set the desired size of the circle
+                    .size(250.dp)  // Set the desired size of the circle
                     .border(
                         width = 2.dp,
                         color = Color.Black,
                         shape = CircleShape
-                    )  // Add an outline to the circle
-                    .padding(8.dp),  // Add padding inside the circle
+                    )
+                    .padding(8.dp),
                 contentAlignment = Alignment.Center
             ) {
                 Column(
@@ -46,20 +50,20 @@ class ScoreUI {
                 ) {
                     Text(
                         "Your credit score is",
-                        style = TextStyle(fontSize = 16.sp),
+                        style = TextStyle(fontSize = 18.sp),
                         textAlign = TextAlign.Center,
-                        modifier = Modifier.padding(bottom = 8.dp)
+                        modifier = Modifier.padding(bottom = 0.dp)
                     )
                     // Display the credit score if it's available
                     Text(
                         creditReport.creditScore.toString(),
-                        style = TextStyle(fontSize = 24.sp, fontWeight = FontWeight.Bold),
+                        style = TextStyle(fontSize = 70.sp, fontWeight = FontWeight.Light),
                         textAlign = TextAlign.Center,
-                        modifier = Modifier.padding(bottom = 8.dp)
+                        modifier = Modifier.padding(bottom = 0.dp)
                     )
                     Text(
                         "out of 700",
-                        style = TextStyle(fontSize = 16.sp),
+                        style = TextStyle(fontSize = 18.sp),
                         textAlign = TextAlign.Center
                     )
                 }
