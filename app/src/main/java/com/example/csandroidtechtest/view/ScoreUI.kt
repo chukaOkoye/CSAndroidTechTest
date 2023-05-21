@@ -35,7 +35,7 @@ class ScoreUI {
             modifier = Modifier.padding(bottom = 300.dp)){
             Box(
                 modifier = Modifier
-                    .size(250.dp)  // Set the desired size of the circle
+                    .size(250.dp)
                     .border(
                         width = 2.dp,
                         color = Color.Black,
@@ -54,7 +54,6 @@ class ScoreUI {
                         textAlign = TextAlign.Center,
                         modifier = Modifier.padding(bottom = 0.dp)
                     )
-                    // Display the credit score if it's available
                     Text(
                         creditReport.creditScore.toString(),
                         style = TextStyle(fontSize = 70.sp, fontWeight = FontWeight.Light),
@@ -74,7 +73,7 @@ class ScoreUI {
     @Composable
     fun CreditScoreViewPreview() {
         val viewModel = CreditScoreViewModel()
-        viewModel.creditScore = 200 // Set the example credit score here
+        viewModel.creditScore = 200
 
         CreditScoreView(viewModel)
     }
